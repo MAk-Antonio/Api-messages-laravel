@@ -73,7 +73,7 @@ class MessagesController extends Controller
         $data['connection'] = $connection->connection_id;
         $data['user_id'] = $ip;
         $this->messages->create($data);
-        $data = ['connection' => $instance, 'user_id',$ip];
+        $data = ['connection' => $instance, 'user_id'=>$ip];
         return response()->json($data);
     }
     public function update($id)
