@@ -48,7 +48,7 @@ class MessagesController extends Controller
         $ip = $this->requestIp;
         $data = $this->request->all();
         if(is_null($instance)){
-            $connId = substr($ip,3).rand().substr($ip,0,4);
+            $connId = substr($ip,3).rand(10000,999999).substr($ip,0,4);
             if(!isset($data['subject'])){
                 $data['subject'] = $connId;
             }

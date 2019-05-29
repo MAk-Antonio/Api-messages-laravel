@@ -16,7 +16,7 @@ class MessageTable extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->nullable(false);
-            $table->bigInteger('connection')->nullable(false);
+            $table->char('connection',250)->nullable(false);
             $table->longText('message')->nullable(false);
             $table->bigInteger('reference_message')->nullable(true);
             $table->timestamps();

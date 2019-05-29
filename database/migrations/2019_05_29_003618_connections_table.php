@@ -15,7 +15,7 @@ class ConnectionsTable extends Migration
     {
         Schema::create('connections', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('connection_id')->nullable(false);
+            $table->char('connection_id',250)->nullable(false);
             $table->bigInteger('user_id')->nullable(false);
             $table->text('subject')->nullable(false);
             $table->timestamps();
