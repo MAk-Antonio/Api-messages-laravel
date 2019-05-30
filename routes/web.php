@@ -12,5 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('docs');
+});
+
+Route::prefix('docs')->group(function ()
+{
+    Route::get('/',function (){
+        return view('doc');
+    });
+});
+Route::prefix('/model')->group(function ()
+{
+    Route::get('user',function (){
+        return view('models.users');
+    });
+    Route::get('messages',function (){
+        return view('models.messages');
+    });
+    Route::get('connections',function (){
+        return view('models.connections');
+    });
 });
